@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XB3PR2Y1TQ');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>This&That: Language-Gesture Controlled Video Generation for Robot Planning</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+    <link rel="icon" type="image/png" sizes="32x32" href="">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="robots" content="noindex">
+
+    <meta property="og:site_name" content="This&That" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="This&That: Language-Gesture Controlled Video Generation for Robot Planning" />
+    <meta property="og:description" content="This&That: Language-Gesture Controlled Video Generation for Robot Planning, 2024." />
+    <meta property="og:url" content="" />
+
+    <script src="assets/js/video_comparison.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <div class="highlight-clean" style="padding-bottom: 10px;">
+        <div class="container" style="max-width: 1024px; margin-bottom: 20px;">
+            <h1 class="text-center"> 
+                <b>This&That:</b> Language-Gesture Controlled Video Generation for Robot Planning </h1>
+        </div>
+        <div class="container" style="max-width: 600px; margin-bottom: 20px;">
+            <div class="row authors" style="display: flex; justify-content: space-around;">
+                <div class="col" style="flex: 1; text-align: center; margin: 5px;">
+                    <h5><a style="white-space: nowrap;" href="">Boyang Wang<sup>1</sup></a></h5>
+                </div>
+                <div class="col" style="flex: 1; text-align: center; margin: 5px;">
+                    <h5><a style="white-space: nowrap;" href="">Nikhil Sridhar<sup>1</sup></a></h5>
+                </div>
+                <div class="col" style="flex: 1; text-align: center; margin: 5px;">
+                    <h5><a style="white-space: nowrap;" href="https://cfeng16.github.io/">Chao Feng<sup>1</sup></a></h5>
+                </div>
+            </div>
+            <div class="row authors" style="display: flex; justify-content: space-around;">
+                <div class="col" style="flex: 1; text-align: center; margin: 5px;">
+                    <h5><a style="white-space: nowrap;" href="https://mvandermerwe.github.io/">Mark Van der Merwe<sup>1</sup></a></h5>
+                </div>
+                <div class="col" style="flex: 1; text-align: center; margin: 5px;">
+                    <h5><a style="white-space: nowrap;" href="https://fishbotics.com/">Adam Fishman<sup>2</sup></a></h5>
+                </div>
+                <div class="col" style="flex: 1; text-align: center; margin: 5px;">
+                    <h5><a style="white-space: nowrap;" href="https://www.mmintlab.com/people/nima-fazeli/">Nima Fazeli<sup>1</sup></a></h5>
+                </div>
+            </div>
+            <div class="row authors" style="display: flex; justify-content: center;">
+                <div class="col" style="flex: 1; text-align: center; margin: 5px;">
+                    <h5><a style="white-space: nowrap;" href="https://jjparkcv.github.io/">Jeong Joon Park<sup>1</sup></a></h5>
+                </div>
+            </div>
+            <div class="row affiliations" style="display: flex; justify-content: center;">
+                <div class="col" style="flex: 1; text-align: center; padding: 0 10px;">
+                    <h6><a><sup>1</sup>University of Michigan</a></h6>
+                </div>
+                <div class="col" style="flex: 1; text-align: center; padding: 0 10px;">
+                    <h6><a><sup>2</sup>University of Washington</a></h6>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+
+    </div>
+    <table align="center" width="80%">
+        <tr>
+            <td width="100%">
+                <center>
+                    <video width="1000" muted playsinline id="method" controls>
+                        <source src="assets/video_overview.mp4" type="video/mp4" />
+                    </video>
+                    <br>
+                </center>
+            </td>
+        </tr>
+    </table>
+    
+
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <div style="text-align: center; padding-bottom: 10px;">
+                    <h2>This & That</h2>
+        </div>
+        <div class="row text-center"> 
+            <div class="col-4">
+                <h5>First frame</h5>
+            </div>
+            <div class="col-4">
+                <h5>Gesture</h5>
+            </div>
+            <div class="col-4">
+                <h5>Our Video Generation</h5>
+            </div>
+        </div>
+    
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/teaser.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/instance1_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+        
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/instance1.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Put this inside that</h6>
+            </div>
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/teaser.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/instance2_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/instance2.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Close this</h6>
+            </div>
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+
+                    <img src="assets/imgs/teaser.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/instance3_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/instance3.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Put this inside that</h6>
+            </div>
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/teaser.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/instance4_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/instance4.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Put this near that</h6>
+            </div>
+        </div>
+
+        </div>
+
+        
+
+
+    </div>
+</div>
+
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <div style="text-align: center; padding-bottom: 10px;">
+                    <h2>Comparison vs. Previous Language-Conditioned Method</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center"> 
+            <div class="col-4">
+                <h5>Condition</h5>
+            </div>
+            <div class="col-4">
+                <h5>AVDC (Language-Only)</h5>
+            </div>
+            <div class="col-4">
+                <h5>Our Video Generation</h5>
+            </div>
+        </div>
+    
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/0_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/236_AVDC.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Put carrot in pot or pan</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/236.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Put this to there</h6>
+            </div>
+        </div>
+    
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/164_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/164_AVDC.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Put the yellow cube on top of the blue cube</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/164.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Put this to there</h6>
+            </div>
+        </div>
+    
+        <!-- <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/example1_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/example1_AVDC.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Put the chicken on plate</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/example1.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Put this to there</h6>
+            </div>
+        </div>
+     -->
+        <div class="row captioned_videos">
+
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/578_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/578_AVDC.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Close the drawer</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/578.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Close this to there</h6>
+            </div>
+        </div>
+    
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/example3_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/example3_AVDC.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Fold the cloth from the bottom to top</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/example3.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Fold this to there</h6>
+            </div>
+        </div>
+    
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <img src="assets/imgs/242_gest.png" alt="dog" style="width: 100%;">
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/242_AVDC.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Put the ball to the cup</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/vdm/242.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+                </div>
+                <h6 class="caption">Put this to there</h6>
+            </div>
+        </div>
+    </div>
+    
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <div style="text-align: center; padding-bottom: 10px;">
+                    <h2>Simulation Rollout Comparison</h2>
+        </div>
+        <div class="row text-center"> 
+            <div class="col-4">
+                <h5>Ground Truth</h5>
+            </div>
+            <div class="col-4">
+                <h5>Language-Only</h5>
+            </div>
+            <div class="col-4">
+                <h5>Language-Gesture (Ours)</h5>
+            </div>
+        </div>
+    
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/easy_exs/3_GT.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/easy_exs/3_VL.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Stack right green cube on top of left green cube</h6>
+            </div>
+
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/easy_exs/3_VGL.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">stack this to there</h6>
+            </div>
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/easy_exs/14_GT.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/easy_exs/14_VL.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Move cyan cylinder to the right of left gray cube</h6>
+            </div>
+
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/easy_exs/14_VGL.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Move this to there</h6>
+            </div>
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/hard_exs/46_GT.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/hard_exs/46_VL.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Stack rightmost red cube on top of second leftmost red cube</h6>
+            </div>
+
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/hard_exs/46_VGL.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">stack this to there</h6>
+            </div>
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/hard_exs/6_GT.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption"></h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/hard_exs/6_VL.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Move leftmost cyan cylinder behind second rightmost cyan cylinder</h6>
+            </div>
+
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                        <source data-src="assets/rollout/hard_exs/6_VGL.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas> <!-- Hide the canvas -->
+                </div>
+                <h6 class="caption">Move this to there</h6>
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
+
+<hr class="divider" />
+<div class="container" style="max-width: 768px;">
+    <div class="row">
+        <div class="col-sm-12">
+            <div style="text-align: center; padding-bottom: 10px;">
+                <h2>Limitation of Gesture-Only Conditioning</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center"> 
+        <div class="col-4">
+            <h5>Condition</h5>
+        </div>
+        <div class="col-4">
+            <h5>Gesture-Only</h5>
+        </div>
+        <div class="col-4">
+            <h5>Language-Gesture (Ours)</h5>
+        </div>
+    </div>
+
+    <div class="row captioned_videos">
+        <div class="col-4">
+            <div class="video-compare-container" style="width: 100%">
+                <img src="assets/imgs/fold_gest.png" alt="dog" style="width: 100%;">
+            </div>
+            <h6 class="caption"></h6>
+        </div>
+        <div class="col-4">
+            <div class="video-compare-container" style="width: 100%">
+                <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                    <source data-src="assets/vdm/fold_vg.mp4" type="video/mp4"></source>
+                </video>
+                <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+            </div>
+            <h6 class="caption"></h6>
+        </div>
+        <div class="col-4">
+            <div class="video-compare-container" style="width: 100%">
+                <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                    <source data-src="assets/vdm/fold_vgl.mp4" type="video/mp4"></source>
+                </video>
+                <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+            </div>
+            <h6 class="caption">Fold this to there</h6>
+        </div>
+    </div>
+
+</div>
+
+<hr class="divider" />
+<div class="container" style="max-width: 768px;">
+    <div class="row">
+        <div class="col-sm-12">
+            <div style="text-align: center; padding-bottom: 10px;">
+                <h2>Limitation of Language-Only Conditioning</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center"> 
+        <div class="col-4">
+            <h5>Condition</h5>
+        </div>
+        <div class="col-4">
+            <h5>Language-Only</h5>
+        </div>
+        <div class="col-4">
+            <h5>Language-Gesture (Ours)</h5>
+        </div>
+    </div>
+
+    <div class="row captioned_videos">
+        <div class="col-4">
+            <div class="video-compare-container" style="width: 100%">
+                <img src="assets/imgs/example2_gest.png" alt="dog" style="width: 100%;">
+            </div>
+            <h6 class="caption"></h6>
+        </div>
+        <div class="col-4">
+            <div class="video-compare-container" style="width: 100%">
+                <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                    <source data-src="assets/vdm/372_vl.mp4" type="video/mp4"></source>
+                </video>
+                <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+            </div>
+            <h6 class="caption">Take the blue rectangular box and put in the top left of the table</h6>
+        </div>
+        <div class="col-4">
+            <div class="video-compare-container" style="width: 100%">
+                <video class="video lazy" id="ex2" loop playsinline autoplay muted style="width: 100%; height: auto;">
+                    <source data-src="assets/vdm/example2.mp4" type="video/mp4"></source>
+                </video>
+                <canvas height="752" class="video" id="ex2Merge" width="1002" style="display: none;"></canvas>
+            </div>
+            <h6 class="caption">Take this to there</h6>
+        </div>
+    </div>
+
+</div>
+
+
+  
+    <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
+    <script src="assets/js/yall.js"></script>
+    <script>
+        yall(
+            {
+                observeChanges: true
+            }
+        );
+    </script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script>
+    <!-- Import the component -->
+</body>
+
+</html>
