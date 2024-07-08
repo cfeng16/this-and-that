@@ -46,40 +46,38 @@
 
         
         <div class="container" style="max-width: 800px; margin-bottom: 20px;">
-            <div class="row authors" style="display: flex; justify-content: space-between; margin: 0 40px;">
-                <div class="col" style="flex: 1; text-align: center;">
+            <div class="row authors justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-2">
                     <h5><a style="white-space: nowrap;" href="">Boyang Wang<sup style="color: #00274C;">1</sup></a></h5>
                 </div>
-                <div class="col" style="flex: 1; text-align: center;">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-2">
                     <h5><a style="white-space: nowrap;" href="">Nikhil Sridhar<sup style="color: #00274C;">1</sup></a></h5>
                 </div>
-                <div class="col" style="flex: 1; text-align: center;">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-2">
                     <h5><a style="white-space: nowrap;" href="https://cfeng16.github.io/">Chao Feng<sup style="color: #00274C;">1</sup></a></h5>
                 </div>
-                <div class="col" style="flex: 1; text-align: center;">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-2">
                     <h5><a style="white-space: nowrap;" href="https://mvandermerwe.github.io/">Mark Van der Merwe<sup style="color: #00274C;">1</sup></a></h5>
                 </div>
-            </div>
-            <div class="row authors" style="display: flex; justify-content: space-around; margin: 0 100px;">
-                <div class="col" style="flex: 1; text-align: center;">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-2">
                     <h5><a style="white-space: nowrap;" href="https://fishbotics.com/">Adam Fishman<sup style="color: #4B2E83;">2</sup></a></h5>
                 </div>
-                <div class="col" style="flex: 1; text-align: center;">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-2">
                     <h5><a style="white-space: nowrap;" href="https://www.mmintlab.com/people/nima-fazeli/">Nima Fazeli<sup style="color: #00274C;">1</sup></a></h5>
                 </div>
-                <div class="col" style="flex: 1; text-align: center;">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-2">
                     <h5><a style="white-space: nowrap;" href="https://jjparkcv.github.io/">Jeong Joon Park<sup style="color: #00274C;">1</sup></a></h5>
                 </div>
             </div>
-            <div class="row affiliations" style="display: flex; justify-content: center;">
-                <div class="col" style="text-align: center; padding: 0 10px;">
+            <div class="row affiliations justify-content-center mt-2">
+                <div class="col-12 col-md-6 text-center">
                     <h6>
                         <a style="color: #00274C; font-weight: bold; text-decoration: none; font-size: 1.2em; padding: 5px; border-radius: 5px; transition: background-color 0.3s;">
                             <sup style="color: #00274C;">1</sup> University of Michigan
                         </a>
                     </h6>
                 </div>
-                <div class="col" style="text-align: center; padding: 0 10px;">
+                <div class="col-12 col-md-6 text-center">
                     <h6>
                         <a style="color: #4B2E83; font-weight: bold; text-decoration: none; font-size: 1.2em; padding: 5px; border-radius: 5px; transition: background-color 0.3s;">
                             <sup style="color: #4B2E83;">2</sup> University of Washington
@@ -87,13 +85,17 @@
                     </h6>
                 </div>
             </div>
-            
             <style>
                 .affiliations a:hover {
                     background-color: #f0f0f0;
                 }
                 .authors {
                     margin: 0 auto;
+                }
+                @media (max-width: 576px) {
+                    .authors .col-12 {
+                        margin-bottom: 10px;
+                    }
                 }
             </style>
         </div>
